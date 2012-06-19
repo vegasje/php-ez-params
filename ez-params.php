@@ -34,7 +34,7 @@ class Ez_Params {
 		$params = array_slice($argv, 1);
 		
 		foreach ($params as $arg) {
-			if (substr($arg, 0, 1) === '-') {
+			if (substr($arg, 0, 1) === '-' && !is_numeric($arg)) {
 				$current_arg = substr($arg, 1);
 				$this->args[$current_arg] = array();
 			} else {
